@@ -7,6 +7,5 @@ import react from "@vitejs/plugin-react";
 // })
 
 export default defineConfig({
-  base: "/panchtatva-landing-page/",
   plugins: [react()],
 });
