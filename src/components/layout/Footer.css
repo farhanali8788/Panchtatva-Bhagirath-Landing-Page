@@ -22,6 +22,7 @@
   letter-spacing: 3px;
   font-size: clamp(1.3rem, 3vw, 1.6rem);
   margin-bottom: 20px;
+  color: #f4f1ea;
 }
 
 .footer-brand p {
@@ -30,10 +31,45 @@
   letter-spacing: 0.5px;
   color: #bdb8af;
   font-size: clamp(0.82rem, 1.8vw, 0.95rem);
+  margin-bottom: 13px;
 }
 
 /* ─────────────────────────────────────────
-   HEADINGS & LISTS
+   SOCIAL ICONS
+───────────────────────────────────────── */
+.footer-socials {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+  border: 1px solid rgba(166, 124, 82, 0.35);
+  color: #bdb8af;
+  text-decoration: none;
+  transition:
+    border-color 0.5s ease-in-out,
+    color 0.5s ease-in-out,
+    background 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
+}
+
+.social-icon:hover {
+  border-color: var(--accent-bronze);
+  color: var(--accent-bronze);
+  background: rgba(166, 124, 82, 0.1);
+  /* transform: translateY(-3px); */
+}
+
+/* ─────────────────────────────────────────
+   LINKS & CONTACT COLUMNS
 ───────────────────────────────────────── */
 .footer h4 {
   font-size: 0.8rem;
@@ -81,15 +117,12 @@
 /* ═══════════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════════ */
-
-/* Tablet — tighten gap */
 @media (max-width: 1024px) {
   .footer-top {
     gap: 50px;
   }
 }
 
-/* Small tablet — 2 cols: brand full width, links + contact side by side */
 @media (max-width: 768px) {
   .footer {
     padding-top: 70px;
@@ -100,14 +133,13 @@
     padding-bottom: 50px;
   }
   .footer-brand {
-    grid-column: span 2; /* brand spans full width */
+    grid-column: span 2;
   }
   .footer-brand p {
     max-width: 100%;
   }
 }
 
-/* Mobile — full single column */
 @media (max-width: 480px) {
   .footer {
     padding-top: 56px;

@@ -26,15 +26,23 @@ const LandParcels = () => {
             className={`section-divider anim-line ${contentVisible ? "is-visible" : ""}`}
           />
           <p>
-            Each parcel at Panchtatva spans approximately half an acre (22,500
-            sq ft), offering generous space for your private farmhouse vision
-            within a fully developed and secure estate environment.
+            Each parcel at Panchtatva spans approximately 22,500 sq. ft. (half
+            an acre).
           </p>
+          <p>Generous. Open. Unrestricted.</p>
+
+          <p>Land that allows you to build:</p>
+          <p>A farmhouse.</p>
+          <p>A retreat.</p>
+          <p>A long-term legacy space.</p>
           <ul>
             <li>Approx. 22,500 sq ft per parcel</li>
-            <li>Fruit-bearing trees within every plot</li>
-            <li>Developed access roads & drainage infrastructure</li>
+            <li>75-acre master-planned estate</li>
+            <li>Road connectivity within layout</li>
+            <li>Space for personal cultivation and plantation</li>
           </ul>
+          <p>This is land offered with structure — not clutter.</p>
+
           <a
             href="/Panchtatva-Brochure.pdf"
             download="Panchtatva-Brochure.pdf"

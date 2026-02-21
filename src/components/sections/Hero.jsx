@@ -8,11 +8,12 @@ const Hero = () => {
 
       <div className="hero-content">
         <h1 className="hero-title">PANCHTATVA</h1>
-        <h2 className="hero-subtitle">A Gated Luxury Farm Estate</h2>
+        <h2 className="hero-subtitle">Where Earth Meets Intention</h2>
+        <h3 className="hero-subtitle">A Planned Farm Estate</h3>
 
         <p className="hero-tagline">
-          Half Acre Private Land Parcels in a Fully Developed Nature Community
-          Near Nagpur.
+          Half-Acre Land Parcels within a 75-Acre Countryside Community Near
+          Nagpur.
         </p>
 
         <div className="hero-buttons">

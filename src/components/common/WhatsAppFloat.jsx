@@ -1,30 +1,21 @@
 import React, { useState, useEffect } from "react";
 import "./WhatsAppFloat.css";
 
-// ── Replace with your actual WhatsApp number (with country code, no + or spaces)
 const WHATSAPP_NUMBER = "919XXXXXXXXX";
 const WHATSAPP_MESSAGE =
   "Hello! I'm interested in learning more about Panchtatva land parcels.";
 
 const WhatsAppFloat = () => {
-  const [visible, setVisible] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
 
-  // Show button after scrolling 300px
+  // Show tooltip once after 4s, hide after 4 more
   useEffect(() => {
-    const handleScroll = () => setVisible(window.scrollY > 300);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Show tooltip once after 4 seconds to draw attention
-  useEffect(() => {
-    const timer = setTimeout(() => {
+    const show = setTimeout(() => {
       setShowTooltip(true);
-      // Hide it again after 4 seconds
-      setTimeout(() => setShowTooltip(false), 4000);
+      const hide = setTimeout(() => setShowTooltip(false), 4000);
+      return () => clearTimeout(hide);
     }, 4000);
-    return () => clearTimeout(timer);
+    return () => clearTimeout(show);
   }, []);
 
   const handleClick = () => {
@@ -33,24 +24,20 @@ const WhatsAppFloat = () => {
   };
 
   return (
-    <div className={`whatsapp-float ${visible ? "is-visible" : ""}`}>
-      {/* Tooltip */}
+    <div className="whatsapp-float">
       <div className={`whatsapp-tooltip ${showTooltip ? "is-visible" : ""}`}>
         Chat with us on WhatsApp
       </div>
 
-      {/* Pulse rings */}
       <span className="whatsapp-pulse" />
       <span className="whatsapp-pulse whatsapp-pulse--2" />
 
-      {/* Button */}
       <button
         className="whatsapp-btn"
         onClick={handleClick}
         aria-label="Chat on WhatsApp"
         type="button"
       >
-        {/* WhatsApp SVG icon */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 32 32"

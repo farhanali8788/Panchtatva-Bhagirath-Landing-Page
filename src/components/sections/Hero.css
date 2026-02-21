@@ -49,19 +49,6 @@
 }
 
 /* ─────────────────────────────────────────
-   SUBTITLE
-───────────────────────────────────────── */
-.hero-subtitle {
-  font-family: var(--font-body);
-  font-size: clamp(0.6rem, 2vw, 0.9rem);
-  letter-spacing: clamp(2px, 1.5vw, 4px);
-  text-transform: uppercase;
-  font-weight: 400;
-  opacity: 0.8;
-  margin-bottom: 18px;
-}
-
-/* ─────────────────────────────────────────
    TITLE — both size AND letter-spacing
    scale with viewport so the word never
    overflows its padded container
@@ -75,6 +62,19 @@
   margin-bottom: 22px;
   word-break: break-word;
   overflow-wrap: break-word;
+}
+
+/* ─────────────────────────────────────────
+   SUBTITLE
+───────────────────────────────────────── */
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 2vw, 0.9rem);
+  letter-spacing: clamp(2px, 1.5vw, 4px);
+  text-transform: uppercase;
+  font-weight: 400;
+  opacity: 0.8;
+  margin-bottom: 18px;
 }
 
 /* ─────────────────────────────────────────

@@ -60,15 +60,14 @@ const Amenities = () => {
           ref={introRef}
           className={`section-intro text-center anim-fade-up ${introVisible ? "is-visible" : ""}`}
         >
-          <span className="section-label">AMENITIES & LIFESTYLE</span>
-          <h2 className="section-title">Curated Lifestyle Experiences</h2>
+          <span className="section-label">THE ELEMENTS</span>
+          <h2 className="section-title">A Landscape in Progress</h2>
           <div
             className={`section-divider anim-line ${introVisible ? "is-visible" : ""}`}
           />
           <p className="section-description">
-            Designed to complement estate living, Panchtatva offers thoughtfully
-            planned spaces for recreation, wellness and peaceful reflection
-            within a secure gated environment.
+            Panchtatva is being developed as a countryside estate with carefully
+            introduced elements that complement farm living.
           </p>
         </div>
 

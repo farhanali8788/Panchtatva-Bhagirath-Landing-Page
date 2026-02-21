@@ -22,15 +22,15 @@ const Location = () => {
             className={`section-divider anim-line ${contentVisible ? "is-visible" : ""}`}
           />
           <p className="section-description">
-            Located in Village Nimbhori, Tahsil Kalmeshwar, District Nagpur,
-            Panchtatva offers peaceful farm living within comfortable reach of
-            the city's everyday conveniences.
+            Located at Village Nimbhori, Tahsil Kalmeshwar, District Nagpur —
+            Panchtatva offers distance from the city, without disconnecting from
+            it.
           </p>
           <ul className="location-highlights">
             <li>Approx. 25–30 minutes from Nagpur City</li>
-            <li>Easy access via Kalmeshwar Road</li>
-            <li>Low-density green surroundings</li>
-            <li>Well-connected yet privately positioned</li>
+            <li> Access via Kalmeshwar Road</li>
+            <li>Low-density rural surroundings</li>
+            <li>Agricultural belt with open landscapes</li>
           </ul>
           <a href="#contact" className="location-btn">
             SCHEDULE A SITE VISIT

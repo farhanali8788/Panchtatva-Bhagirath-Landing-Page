@@ -49,13 +49,18 @@ const Contact = () => {
           ref={leftRef}
           className={`contact-left anim-fade-left ${leftVisible ? "is-visible" : ""}`}
         >
-          <span className="section-label">ENQUIRE NOW</span>
+          <span className="section-label">SCHEDULE A SITE VISIT</span>
           <h2 className="section-title">
             Begin Your <br /> Panchtatva Journey.
           </h2>
-          <p className="section-description">
-            Schedule a private site visit or speak with our team to explore
-            available half-acre land parcels.
+          <p className="section-description-contact ">
+            Owning land is not a quick decision. It is a considered one.
+          </p>
+          <p className="section-description-contact ">Visit the estate.</p>
+          <p className="section-description-contact ">Walk the parcels.</p>
+          <p className="section-description-contact ">Understand the scale.</p>
+          <p className="section-description-contact ">
+            Then decide — with clarity.
           </p>
           <div className="contact-info">
             <p>

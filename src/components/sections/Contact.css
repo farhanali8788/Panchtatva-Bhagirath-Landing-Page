@@ -42,12 +42,16 @@
   margin-bottom: 30px;
 }
 
-.section-description {
+.section-description-contact {
   color: #5f5b53;
   font-size: clamp(0.88rem, 2vw, 1.05rem);
   letter-spacing: 0.5px;
   line-height: 1.9;
-  margin-bottom: 50px;
+  margin-bottom: 7px;
+}
+
+.contact-info {
+  margin-top: 20px;
 }
 
 .contact-info p {
