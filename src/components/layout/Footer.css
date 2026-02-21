@@ -1,0 +1,127 @@
+.footer {
+  background: #16261f;
+  color: #d8d4cc;
+  padding-top: 90px;
+}
+
+/* ─────────────────────────────────────────
+   TOP GRID
+───────────────────────────────────────── */
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 80px;
+  padding-bottom: 70px;
+}
+
+/* ─────────────────────────────────────────
+   BRAND
+───────────────────────────────────────── */
+.footer-brand h3 {
+  font-family: var(--font-heading);
+  letter-spacing: 3px;
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  margin-bottom: 20px;
+}
+
+.footer-brand p {
+  max-width: 380px;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  color: #bdb8af;
+  font-size: clamp(0.82rem, 1.8vw, 0.95rem);
+}
+
+/* ─────────────────────────────────────────
+   HEADINGS & LISTS
+───────────────────────────────────────── */
+.footer h4 {
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent-bronze);
+  margin-bottom: 20px;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer li {
+  margin-bottom: 14px;
+  font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+  color: #c9c5bc;
+  letter-spacing: 0.4px;
+  line-height: 1.6;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #c9c5bc;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: var(--accent-bronze);
+}
+
+/* ─────────────────────────────────────────
+   BOTTOM BAR
+───────────────────────────────────────── */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  padding: 25px 0;
+  font-size: 0.82rem;
+  color: #8f8a82;
+  letter-spacing: 0.5px;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+
+/* Tablet — tighten gap */
+@media (max-width: 1024px) {
+  .footer-top {
+    gap: 50px;
+  }
+}
+
+/* Small tablet — 2 cols: brand full width, links + contact side by side */
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 70px;
+  }
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 50px;
+    padding-bottom: 50px;
+  }
+  .footer-brand {
+    grid-column: span 2; /* brand spans full width */
+  }
+  .footer-brand p {
+    max-width: 100%;
+  }
+}
+
+/* Mobile — full single column */
+@media (max-width: 480px) {
+  .footer {
+    padding-top: 56px;
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-bottom: 40px;
+  }
+  .footer-brand {
+    grid-column: span 1;
+  }
+  .footer-bottom {
+    padding: 20px 0;
+    font-size: 0.78rem;
+  }
+}

@@ -1,0 +1,27 @@
+@import "./variables.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+}
+
+section {
+  padding: var(--section-padding) 0;
+}
+
+.container-custom {
+  width: 90%;
+  max-width: 1400px;
+  margin: auto;
+}

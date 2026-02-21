@@ -1,0 +1,165 @@
+.land-parcels {
+  background: #2e3a32;
+  padding: 160px 0;
+  color: #f4f1ea;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* ─────────────────────────────────────────
+   GRID LAYOUT
+───────────────────────────────────────── */
+.parcels-wrapper {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+/* ─────────────────────────────────────────
+   IMAGE
+───────────────────────────────────────── */
+.parcel-image img {
+  width: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  display: block;
+}
+
+/* ─────────────────────────────────────────
+   CONTENT
+───────────────────────────────────────── */
+.parcel-content h2 {
+  color: #ede8de;
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin-bottom: 32px;
+  letter-spacing: clamp(1px, 0.8vw, 2px);
+  line-height: 1.2;
+}
+
+.parcel-content .section-divider {
+  background: var(--accent-bronze);
+  opacity: 1;
+  height: 1.5px;
+  margin-bottom: 24px;
+}
+
+.parcel-content p {
+  font-size: clamp(0.88rem, 1.8vw, 1rem);
+  letter-spacing: 0.6px;
+  text-align: justify;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  opacity: 0.8;
+}
+
+.parcel-content ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.parcel-content li {
+  margin-bottom: 20px;
+  font-size: clamp(0.82rem, 1.8vw, 0.95rem);
+  letter-spacing: 0.7px;
+  opacity: 0.8;
+  position: relative;
+  padding-left: 20px;
+}
+
+.parcel-content li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 7px;
+  height: 7px;
+  background: var(--accent-bronze);
+}
+
+/* ─────────────────────────────────────────
+   BUTTON — scoped to this section only
+   (avoids conflict with header .btn-bronze)
+───────────────────────────────────────── */
+.parcel-content .btn-bronze {
+  display: inline-block;
+  padding: 14px 32px;
+  border: 1px solid var(--accent-bronze);
+  color: var(--accent-bronze);
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.4s ease;
+}
+
+.parcel-content .btn-bronze:hover {
+  background: var(--accent-bronze);
+  color: #1f2e26;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+
+/* Tablet — tighten gap, keep 2 cols */
+@media (max-width: 1024px) {
+  .parcels-wrapper {
+    gap: 60px;
+  }
+  .land-parcels {
+    padding: 120px 0;
+  }
+}
+
+/* Small tablet — stack to single column */
+@media (max-width: 768px) {
+  .land-parcels {
+    padding: 100px 0;
+  }
+  .parcels-wrapper {
+    grid-template-columns: 1fr; /* stack */
+    gap: 48px;
+  }
+  .parcel-image img {
+    max-height: 420px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .parcel-content p {
+    text-align: left; /* justify looks bad on narrow columns */
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .land-parcels {
+    padding: 80px 0;
+  }
+  .parcels-wrapper {
+    gap: 36px;
+  }
+  .parcel-image img {
+    max-height: 280px;
+    border-radius: 3px;
+  }
+  .parcel-content h2 {
+    margin-bottom: 24px;
+  }
+  .parcel-content p {
+    margin-bottom: 28px;
+  }
+  .parcel-content ul {
+    margin-bottom: 32px;
+  }
+  .parcel-content li {
+    margin-bottom: 14px;
+  }
+  .parcel-content .btn-bronze {
+    width: 100%;
+    text-align: center;
+    padding: 14px 24px;
+  }
+}

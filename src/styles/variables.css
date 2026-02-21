@@ -1,0 +1,11 @@
+:root {
+  --bg-primary: #f4f1ea;
+  --bg-dark: #2f3e34;
+  --text-primary: #1c1c1c;
+  --accent-bronze: #a67c52;
+
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Poppins", sans-serif;
+
+  --section-padding: 120px;
+}

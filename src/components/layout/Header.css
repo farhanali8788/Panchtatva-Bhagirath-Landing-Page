@@ -1,0 +1,407 @@
+/* ─────────────────────────────────────────
+   HEADER — BASE
+───────────────────────────────────────── */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  transition:
+    background 0.4s ease,
+    box-shadow 0.4s ease;
+  background: transparent;
+}
+
+.header-inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  width: 100%;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-center {
+  display: flex;
+  justify-content: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+/* ─────────────────────────────────────────
+   LOGO
+───────────────────────────────────────── */
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  letter-spacing: 5px;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+
+/* ─────────────────────────────────────────
+   LIGHT STATE (hero visible)
+───────────────────────────────────────── */
+.header.light .logo,
+.header.light .nav-links a {
+  color: white;
+}
+
+.header.light .btn-bronze {
+  border-color: rgba(255, 255, 255, 0.75);
+  color: white;
+}
+
+.header.light .bar {
+  background: white;
+}
+
+/* ─────────────────────────────────────────
+   DARK STATE (scrolled)
+───────────────────────────────────────── */
+.header.dark {
+  background: rgba(244, 241, 234, 0.97);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.header.dark .logo,
+.header.dark .nav-links a {
+  color: var(--text-primary);
+}
+
+.header.dark .btn-bronze {
+  border-color: var(--accent-bronze);
+  color: var(--accent-bronze);
+}
+
+.header.dark .btn-bronze:hover {
+  background: var(--accent-bronze);
+  color: white;
+}
+
+.header.dark .bar {
+  background: var(--text-primary);
+}
+
+/* ─────────────────────────────────────────
+   DESKTOP NAV
+───────────────────────────────────────── */
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  opacity: 0.6;
+}
+
+/* ─────────────────────────────────────────
+   BOOK VISIT BUTTON
+───────────────────────────────────────── */
+.btn-bronze {
+  display: inline-block;
+  padding: 10px 26px 8px 26px;
+  border: 1px solid var(--accent-bronze);
+  color: var(--accent-bronze);
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+
+.btn-bronze:hover {
+  background: var(--accent-bronze);
+  color: white;
+}
+
+/* ─────────────────────────────────────────
+   HAMBURGER BUTTON
+───────────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  position: relative;
+  z-index: 1100;
+}
+
+.bar {
+  display: block;
+  width: 26px;
+  height: 1.5px;
+  background: white;
+  border-radius: 1px;
+  transition:
+    transform 0.4s cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 0.3s ease,
+    width 0.3s ease;
+  transform-origin: center;
+}
+
+/* Hamburger → X animation */
+.hamburger.open .bar-top {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.hamburger.open .bar-mid {
+  opacity: 0;
+  width: 0;
+}
+.hamburger.open .bar-bot {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ─────────────────────────────────────────
+   MOBILE MENU OVERLAY
+───────────────────────────────────────── */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: var(--color-dark, #1f3a2e);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  /* Hidden state */
+  clip-path: circle(0% at calc(100% - 50px) 42px);
+  transition: clip-path 0.65s cubic-bezier(0.77, 0, 0.175, 1);
+  pointer-events: none;
+}
+
+.mobile-menu.is-open {
+  clip-path: circle(170% at calc(100% - 50px) 42px);
+  pointer-events: all;
+}
+
+/* Decorative corner texture */
+.mobile-menu::before {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  border: 1px solid rgba(180, 140, 80, 0.12);
+  pointer-events: none;
+}
+.mobile-menu::after {
+  content: "";
+  position: absolute;
+  bottom: -140px;
+  left: -140px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 1px solid rgba(180, 140, 80, 0.07);
+  pointer-events: none;
+}
+
+.mobile-menu-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 120px 40px 60px;
+}
+
+/* ─────────────────────────────────────────
+   MOBILE NAV LINKS
+───────────────────────────────────────── */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.mobile-nav-link {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(180, 140, 80, 0.18);
+  text-decoration: none;
+  color: rgba(244, 241, 234, 0.92);
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  letter-spacing: 2px;
+  transition:
+    color 0.3s ease,
+    padding-left 0.3s ease;
+
+  /* Animate in when menu opens */
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.mobile-menu.is-open .mobile-nav-link {
+  animation: slideUpFade 0.5s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes slideUpFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-nav-link:hover {
+  color: var(--accent-bronze, #b48c50);
+  padding-left: 8px;
+}
+
+.mobile-nav-number {
+  font-family: var(--font-body, serif);
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--accent-bronze, #b48c50);
+  opacity: 0.8;
+  margin-top: 4px;
+  min-width: 20px;
+}
+
+/* ─────────────────────────────────────────
+   MOBILE MENU FOOTER
+───────────────────────────────────────── */
+.mobile-menu-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.btn-bronze-full {
+  display: block;
+  text-align: center;
+  padding: 16px 32px;
+  border: 1px solid var(--accent-bronze, #b48c50);
+  color: var(--accent-bronze, #b48c50);
+  font-size: 0.82rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+.btn-bronze-full:hover {
+  background: var(--accent-bronze, #b48c50);
+  color: white;
+}
+
+.mobile-tagline {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  letter-spacing: 3px;
+  color: rgba(244, 241, 234, 0.3);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE BREAKPOINTS
+───────────────────────────────────────── */
+
+/* Tablet — collapse nav links, keep logo + button + hamburger */
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 28px;
+  }
+
+  .nav-links a {
+    font-size: 0.82rem;
+  }
+}
+
+/* ≤ 900px — hide desktop nav, show hamburger */
+@media (max-width: 900px) {
+  .header-inner {
+    margin: 0 16px 0 24px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .header-inner {
+    grid-template-columns: auto 1fr auto;
+  }
+}
+
+/* Mobile — tighten header height and logo */
+@media (max-width: 640px) {
+  .header {
+    height: 70px;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+    letter-spacing: 4px;
+  }
+
+  .mobile-menu-inner {
+    padding: 100px 28px 48px;
+  }
+
+  .mobile-nav-link {
+    font-size: clamp(0.5rem, 4vw, 1rem);
+    padding: 16px 0;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 380px) {
+  .logo {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+  }
+
+  .mobile-menu-inner {
+    padding: 90px 20px 40px;
+  }
+}

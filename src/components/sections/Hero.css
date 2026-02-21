@@ -1,0 +1,199 @@
+/* ═══════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════ */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background: url("images/hero-background2.png") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.62) 0%,
+    rgba(0, 0, 0, 0.38) 45%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────────
+   CONTENT
+───────────────────────────────────────── */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 900px;
+  padding: 100px 48px 0;
+  color: white;
+  opacity: 0;
+  transform: translateY(22px);
+  animation: heroFadeUp 1.2s ease 0.25s forwards;
+}
+
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─────────────────────────────────────────
+   SUBTITLE
+───────────────────────────────────────── */
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.6rem, 2vw, 0.9rem);
+  letter-spacing: clamp(2px, 1.5vw, 4px);
+  text-transform: uppercase;
+  font-weight: 400;
+  opacity: 0.8;
+  margin-bottom: 18px;
+}
+
+/* ─────────────────────────────────────────
+   TITLE — both size AND letter-spacing
+   scale with viewport so the word never
+   overflows its padded container
+───────────────────────────────────────── */
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 9vw, 5.2rem);
+  letter-spacing: clamp(3px, 1.5vw, 12px);
+  font-weight: 500;
+  line-height: 1.05;
+  margin-bottom: 22px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ─────────────────────────────────────────
+   TAGLINE
+───────────────────────────────────────── */
+.hero-tagline {
+  font-family: var(--font-body);
+  font-size: clamp(0.8rem, 2vw, 1.05rem);
+  letter-spacing: 0.8px;
+  line-height: 1.75;
+  opacity: 0.84;
+  max-width: 580px;
+  margin: 0 auto 44px;
+}
+
+/* ─────────────────────────────────────────
+   BUTTONS
+───────────────────────────────────────── */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--accent-bronze);
+  color: white;
+  padding: 13px 32px 11px;
+  font-family: var(--font-body);
+  font-size: clamp(0.72rem, 2vw, 0.85rem);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  border: 1px solid var(--accent-bronze);
+  transition:
+    background 0.38s ease,
+    color 0.38s ease,
+    border-color 0.38s ease;
+}
+.btn-primary:hover {
+  background: transparent;
+  color: white;
+  border-color: white;
+}
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: white;
+  padding: 13px 32px 11px;
+  font-family: var(--font-body);
+  font-size: clamp(0.72rem, 2vw, 0.85rem);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  transition:
+    background 0.38s ease,
+    color 0.38s ease,
+    border-color 0.38s ease;
+}
+.btn-outline:hover {
+  background: white;
+  color: var(--text-primary);
+  border-color: white;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 90px 40px 0;
+  }
+  .hero-tagline {
+    margin-bottom: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    align-items: flex-end;
+    padding-bottom: 60px;
+  }
+  .hero-content {
+    padding: 0 24px;
+  }
+  .hero-title {
+    /* tighter on small phones */
+    font-size: clamp(1.9rem, 8.5vw, 2.8rem);
+    letter-spacing: clamp(2px, 1.2vw, 6px);
+  }
+  .hero-tagline {
+    margin-bottom: 28px;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .btn-primary,
+  .btn-outline {
+    text-align: center;
+    padding: 14px 20px 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-content {
+    padding: 0 16px;
+  }
+  .hero-title {
+    font-size: clamp(1.8rem, 7.5vw, 2.4rem);
+    letter-spacing: clamp(1.5px, 1vw, 4px);
+  }
+}

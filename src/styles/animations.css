@@ -1,0 +1,112 @@
+/* ═══════════════════════════════════════════
+   SCROLL ANIMATIONS
+   Add class to element, pair with
+   useScrollAnimation hook in React.
+   When .is-visible is added → animates in.
+═══════════════════════════════════════════ */
+
+/* ─── FADE UP (default — most elements) ─── */
+.anim-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.anim-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── FADE IN (no movement — for images/cards) ─── */
+.anim-fade-in {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+.anim-fade-in.is-visible {
+  opacity: 1;
+}
+
+/* ─── FADE LEFT (slides in from left) ─── */
+.anim-fade-left {
+  opacity: 0;
+  transform: translateX(-48px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.anim-fade-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ─── FADE RIGHT (slides in from right) ─── */
+.anim-fade-right {
+  opacity: 0;
+  transform: translateX(48px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.anim-fade-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ─── SCALE UP (for images, cards) ─── */
+.anim-scale-up {
+  opacity: 0;
+  transform: scale(0.94);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.anim-scale-up.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ─── LINE GROW (for dividers/decorative lines) ─── */
+.anim-line {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.anim-line.is-visible {
+  transform: scaleX(1);
+}
+
+/* ─── STAGGER DELAYS ─── */
+/* Apply to children for cascading effect */
+.anim-delay-1 {
+  transition-delay: 0.1s;
+}
+.anim-delay-2 {
+  transition-delay: 0.2s;
+}
+.anim-delay-3 {
+  transition-delay: 0.32s;
+}
+.anim-delay-4 {
+  transition-delay: 0.44s;
+}
+.anim-delay-5 {
+  transition-delay: 0.56s;
+}
+.anim-delay-6 {
+  transition-delay: 0.68s;
+}
+
+/* ─── RESPECT REDUCED MOTION ─── */
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-up,
+  .anim-fade-in,
+  .anim-fade-left,
+  .anim-fade-right,
+  .anim-scale-up,
+  .anim-line {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
