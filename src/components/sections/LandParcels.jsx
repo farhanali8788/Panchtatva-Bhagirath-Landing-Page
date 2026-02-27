@@ -1,9 +1,9 @@
 import React from "react";
 import "./LandParcels.css";
-import parcelImg from "/images/Land_Parcels.png";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
 
 const LandParcels = () => {
+  const parcelImg = `${import.meta.env.BASE_URL}images/Land_Parcels.png`;
   const [imgRef, imgVisible] = useScrollAnimation(0.15);
   const [contentRef, contentVisible] = useScrollAnimation(0.15);
 
@@ -44,7 +44,7 @@ const LandParcels = () => {
           <p>This is land offered with structure — not clutter.</p>
 
           <a
-            href="/Panchtatva-Brochure.pdf"
+            href={`${import.meta.env.BASE_URL}Panchtatva-Brochure.pdf`}
             download="Panchtatva-Brochure.pdf"
             className="btn-bronze"
           >

@@ -2,8 +2,12 @@ import React from "react";
 import "./Hero.css";
 
 const Hero = () => {
+  const heroBg = `${import.meta.env.BASE_URL}images/hero-background2.png`;
   return (
-    <section className="hero">
+    <section
+      className="hero"
+      style={{ backgroundImage: `url(${heroBg})` }}
+    >
       <div className="hero-overlay"></div>
 
       <div className="hero-content">
@@ -19,7 +23,7 @@ const Hero = () => {
         <div className="hero-buttons">
           {/* Place your brochure PDF at /public/Panchtatva-Brochure.pdf */}
           <a
-            href="/Panchtatva-Brochure.pdf"
+            href={`${import.meta.env.BASE_URL}Panchtatva-Brochure.pdf`}
             download="Panchtatva-Brochure.pdf"
             className="btn-primary"
           >

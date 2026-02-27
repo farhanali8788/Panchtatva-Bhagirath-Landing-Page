@@ -5,31 +5,31 @@ import useScrollAnimation from "../../hooks/useScrollAnimation";
 const amenities = [
   {
     cls: "full",
-    src: "/Amenities-Images/pool-image.jpg",
+    src: `${import.meta.env.BASE_URL}Amenities-Images/pool-image.jpg`,
     alt: "Swimming Pool",
     label: "Swimming Pool & Relaxation Deck",
   },
   {
     cls: "tall",
-    src: "/Amenities-Images/jogging-track.jpg",
+    src: `${import.meta.env.BASE_URL}Amenities-Images/jogging-track.jpg`,
     alt: "Walking Track",
     label: "Walking & Jogging Tracks",
   },
   {
     cls: "small",
-    src: "/Amenities-Images/tennis-area.jpg",
+    src: `${import.meta.env.BASE_URL}Amenities-Images/tennis-area.jpg`,
     alt: "Tennis Court",
     label: "Tennis & Badminton Courts",
   },
   {
     cls: "small",
-    src: "/Amenities-Images/temple.jpg",
+    src: `${import.meta.env.BASE_URL}Amenities-Images/temple.jpg`,
     alt: "Mandir",
     label: "Mandir & Gau Shala",
   },
   {
     cls: "wide",
-    src: "/Amenities-Images/pond.jpg",
+    src: `${import.meta.env.BASE_URL}Amenities-Images/pond.jpg`,
     alt: "Artificial Pond",
     label: "Artificial Pond & Sunset Viewing Zones",
   },
