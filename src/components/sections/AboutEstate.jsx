@@ -9,7 +9,7 @@ const features = [
     delay: "",
   },
   {
-    title: "Internal Access Roads (In Development)",
+    title: "Wide Internal Road Network",
     text: "Wide approach roads being shaped to ensure smooth movement across parcels.",
     delay: "anim-delay-2",
   },

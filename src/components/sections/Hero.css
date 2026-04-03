@@ -3,9 +3,9 @@
 ═══════════════════════════════════════════ */
 .hero {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  min-height: 600px;
+
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -21,9 +21,9 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.62) 0%,
-    rgba(0, 0, 0, 0.38) 45%,
-    rgba(0, 0, 0, 0.55) 100%
+    rgba(0, 0, 0, 0.22) 0%,
+    rgba(0, 0, 0, 0.48) 45%,
+    rgba(0, 0, 0, 0.25) 100%
   );
   pointer-events: none;
 }

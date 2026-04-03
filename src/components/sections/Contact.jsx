@@ -1,21 +1,20 @@
-import React, { useState, useRef } from "react";
-import emailjs from "@emailjs/browser";
+import React, { useState } from "react";
 import "./Contact.css";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
 
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+// ── Formspree ─────────────────────────────────────────────────────
+// 1. Go to https://formspree.io → create a form → copy the ID
+// 2. Replace YOUR_FORM_ID below (e.g. "xpwzabcd")
+const FORMSPREE_URL = "https://formspree.io/f/YOUR_FORM_ID";
 
 const Contact = () => {
-  const formRef = useRef();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
     email: "",
     message: "",
   });
-  const [status, setStatus] = useState("idle");
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
 
   const [leftRef, leftVisible] = useScrollAnimation(0.15);
   const [rightRef, rightVisible] = useScrollAnimation(0.15);
@@ -28,16 +27,27 @@ const Contact = () => {
     e.preventDefault();
     setStatus("sending");
     try {
-      await emailjs.sendForm(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        EMAILJS_PUBLIC_KEY,
-      );
-      setStatus("success");
-      setFormData({ name: "", phone: "", email: "", message: "" });
-    } catch (err) {
-      console.error("EmailJS error:", err);
+      const res = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          message: formData.message || "Site visit request",
+        }),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setFormData({ name: "", phone: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
       setStatus("error");
     }
   };
@@ -53,13 +63,13 @@ const Contact = () => {
           <h2 className="section-title">
             Begin Your <br /> Panchtatva Journey.
           </h2>
-          <p className="section-description-contact ">
+          <p className="section-description-contact">
             Owning land is not a quick decision. It is a considered one.
           </p>
-          <p className="section-description-contact ">Visit the estate.</p>
-          <p className="section-description-contact ">Walk the parcels.</p>
-          <p className="section-description-contact ">Understand the scale.</p>
-          <p className="section-description-contact ">
+          <p className="section-description-contact">Visit the estate.</p>
+          <p className="section-description-contact">Walk the parcels.</p>
+          <p className="section-description-contact">Understand the scale.</p>
+          <p className="section-description-contact">
             Then decide — with clarity.
           </p>
           <div className="contact-info">
@@ -80,7 +90,7 @@ const Contact = () => {
           ref={rightRef}
           className={`contact-right anim-fade-right ${rightVisible ? "is-visible" : ""}`}
         >
-          <form ref={formRef} className="contact-form" onSubmit={handleSubmit}>
+          <form className="contact-form" onSubmit={handleSubmit}>
             <input
               type="text"
               name="name"
@@ -119,6 +129,7 @@ const Contact = () => {
             >
               {status === "sending" ? "SENDING..." : "SCHEDULE A VISIT"}
             </button>
+
             {status === "success" && (
               <p className="form-feedback success">
                 ✓ Thank you! We'll be in touch shortly.

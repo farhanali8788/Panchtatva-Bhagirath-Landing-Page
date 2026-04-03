@@ -2,12 +2,9 @@ import React from "react";
 import "./Hero.css";
 
 const Hero = () => {
-  const heroBg = `${import.meta.env.BASE_URL}images/hero-background2.png`;
+  const heroBg = `${import.meta.env.BASE_URL}site-images/hero-bg.png`;
   return (
-    <section
-      className="hero"
-      style={{ backgroundImage: `url(${heroBg})` }}
-    >
+    <section className="hero" style={{ backgroundImage: `url(${heroBg})` }}>
       <div className="hero-overlay"></div>
 
       <div className="hero-content">

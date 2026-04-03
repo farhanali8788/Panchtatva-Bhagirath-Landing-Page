@@ -3,7 +3,7 @@ import "./LandParcels.css";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
 
 const LandParcels = () => {
-  const parcelImg = `${import.meta.env.BASE_URL}images/Land_Parcels.png`;
+  const parcelImg = `${import.meta.env.BASE_URL}site-images/land-parcel.png`;
   const [imgRef, imgVisible] = useScrollAnimation(0.15);
   const [contentRef, contentVisible] = useScrollAnimation(0.15);
 
