@@ -1,6 +1,6 @@
 .about-estate {
   background: #f4f1ea;
-  padding: 180px 0 140px 0;
+  padding: 100px 0 100px 0;
   color: var(--text-primary);
   animation: fadeInSection 1.2s ease forwards;
   opacity: 0;
@@ -39,6 +39,7 @@
 
 .about-header p {
   font-size: clamp(0.88rem, 2vw, 1.05rem);
+  text-align: center;
   letter-spacing: 1px;
   line-height: 1.8;
   opacity: 0.75;
@@ -50,22 +51,24 @@
 .about-features {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 90px 140px;
+  gap: 50px 30px;
   max-width: 900px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 20px 0 60px;
 }
 
 .feature {
   position: relative;
-  padding-left: 60px;
+  width: 400px;
+  text-align: justify;
+  padding-left: 20px;
   transition: all 0.3s ease;
 }
 
 .feature::before {
   content: "";
   position: absolute;
-  left: 34px;
+  left: 0px;
   top: 5px;
   width: 8px;
   height: 8px;

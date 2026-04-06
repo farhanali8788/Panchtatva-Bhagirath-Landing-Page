@@ -58,8 +58,7 @@ const AboutEstate = () => {
             Panchtatva is a 75-acre farm estate envisioned for those who seek
             space, privacy, and a long-term relationship with land.
           </p>
-          <p>This is not a resort. </p>
-          <p>It is not a weekend rush.</p>
+          <p>This is not a resort. It is not a weekend rush. </p>
           <p>
             It is a farmland planned with clarity — where infrastructure is
             being developed carefully, step by step.
