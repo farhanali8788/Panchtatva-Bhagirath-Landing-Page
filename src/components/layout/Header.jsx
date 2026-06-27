@@ -38,10 +38,13 @@ const Header = () => {
       >
         <div className="container-custom header-inner">
           {/* Logo */}
-          <div className="header-left">
-            <a href="#" className="logo">
-              PANCHTATVA
-            </a>
+          <div className="navbar-brand">
+            <div className="brand-badge">
+              <img
+                src={scrolled || menuOpen ? "/logo_brown.png" : "/LOGO.png"}
+                alt="Panchtatva Logo"
+              />
+            </div>
           </div>
 
           {/* Desktop Nav */}
