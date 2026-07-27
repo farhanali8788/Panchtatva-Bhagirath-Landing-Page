@@ -5,7 +5,7 @@ import useScrollAnimation from "../../hooks/useScrollAnimation";
 // ── Formspree ─────────────────────────────────────────────────────
 // 1. Go to https://formspree.io → create a form → copy the ID
 // 2. Replace YOUR_FORM_ID below (e.g. "xpwzabcd")
-const FORMSPREE_URL = "https://formspree.io/f/YOUR_FORM_ID";
+const FORMSPREE_URL = "https://formspree.io/f/xykqpjlo";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -38,6 +38,8 @@ const Contact = () => {
           phone: formData.phone,
           email: formData.email,
           message: formData.message || "Site visit request",
+          _subject: `Panchtatva Enquiry — ${formData.name || "New Lead"}`,
+          _replyto: formData.email,
         }),
       });
 
@@ -78,10 +80,10 @@ const Contact = () => {
               441102
             </p>
             <p>
-              <strong>Phone:</strong> +91 XXXXX XXXXX
+              <strong>Phone:</strong> +91 91120 06081
             </p>
             <p>
-              <strong>Email:</strong> info@panchtatva.com
+              <strong>Email:</strong> info@bhagirathrealty.com
             </p>
           </div>
         </div>

@@ -130,7 +130,7 @@ const Footer = () => {
             <li>Village Nimbhori,</li>
             <li>Tahsil Kalmeshwar,</li>
             <li>District Nagpur - 441102</li>
-            <li>+91 XXXXX XXXXX</li>
+            <li>+91 91120 06081</li>
           </ul>
         </div>
       </div>
