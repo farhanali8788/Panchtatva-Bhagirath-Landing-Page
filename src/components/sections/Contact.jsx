@@ -65,6 +65,9 @@ const Contact = () => {
           <h2 className="section-title">
             Begin Your <br /> Panchtatva Journey.
           </h2>
+          <div
+            className={`section-divider anim-line ${leftVisible ? "is-visible" : ""}`}
+          />
           <p className="section-description-contact">
             Owning land is not a quick decision. It is a considered one.
           </p>

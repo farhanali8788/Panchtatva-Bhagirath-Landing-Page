@@ -71,7 +71,11 @@ const Footer = () => {
           ref={brandRef}
           className={`footer-brand anim-fade-up ${brandVisible ? "is-visible" : ""}`}
         >
-          <h3>PANCHTATVA</h3>
+          <img
+            className="footer_logo"
+            src="logo_brown.png"
+            alt="Panchtatva Logo"
+          />
           <p>
             A planned 75-acre farm estate offering structured countryside living
             near Nagpur.

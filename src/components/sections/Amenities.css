@@ -8,39 +8,17 @@
 
 .section-intro {
   max-width: 850px;
-  margin: 0 auto 30px 60px;
+  margin: 0 auto 60px auto;
+  text-align: center;
 }
 
-.section-label {
-  font-size: 0.75rem;
-  letter-spacing: 4px;
-  color: var(--accent-bronze);
-  font-weight: 500;
-  display: inline-block;
-  margin-bottom: 15px;
+.section-intro .section-divider {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.section-title {
-  font-family: var(--font-heading);
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.section-divider {
-  width: 60px;
-  height: 1px;
-  background: var(--accent-bronze);
-  opacity: 0.6;
-}
-
-.section-description {
-  color: #5f5b53;
-  font-size: clamp(0.88rem, 2vw, 1.05rem);
-  letter-spacing: 0.6px;
-  line-height: 1.9;
-  max-width: 650px;
-  margin-top: 30px;
+.section-intro .section-description {
+  margin: 0 auto;
 }
 
 /* ─────────────────────────────────────────
@@ -142,7 +120,7 @@
 /* Tablet — tighten intro margin and grid gap */
 @media (max-width: 1024px) {
   .section-intro {
-    margin: 0 auto 80px 40px;
+    margin: 0 auto 80px auto;
   }
   .amenities-layout {
     gap: 32px;
@@ -160,12 +138,17 @@
   }
 }
 
-/* Small tablet — centre intro, keep 2 cols but flatten spans */
+/* Small tablet — switch intro to left-aligned for readability, keep 2 cols but flatten spans */
 @media (max-width: 768px) {
   .section-intro {
     margin: 0 auto 60px;
     text-align: left;
     padding: 0 20px;
+  }
+  .section-intro .section-divider,
+  .section-intro .section-description {
+    margin-left: 0;
+    margin-right: 0;
   }
   .amenities-layout {
     gap: 20px;

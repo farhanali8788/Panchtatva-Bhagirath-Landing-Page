@@ -42,7 +42,7 @@ const AmenityCard = ({ cls, src, alt, label, delay }) => {
       ref={ref}
       className={`amenity ${cls} anim-scale-up ${delay} ${visible ? "is-visible" : ""}`}
     >
-      <img src={src} alt={alt} />
+      <img src={src} alt={alt} loading="lazy" decoding="async" />
       <div className="overlay">
         <h3>{label}</h3>
       </div>

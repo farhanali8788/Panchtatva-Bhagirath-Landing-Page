@@ -43,8 +43,10 @@ const Location = () => {
         >
           <div className="map-frame">
             <img
-              src={`${import.meta.env.BASE_URL}images/location-image.png`}
+              src={`${import.meta.env.BASE_URL}images/location-image.jpg`}
               alt="Panchtatva Location Map"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

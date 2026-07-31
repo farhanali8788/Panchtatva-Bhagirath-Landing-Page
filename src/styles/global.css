@@ -25,3 +25,47 @@ section {
   max-width: 1400px;
   margin: auto;
 }
+
+/* ═══════════════════════════════════════════
+   SHARED SECTION HEADING SYSTEM
+   Used by AboutEstate, Amenities, Location,
+   Contact. Individual sections only add scoped
+   overrides (color on dark bg, extra spacing)
+   on top of this — never redeclare bare.
+═══════════════════════════════════════════ */
+.section-label {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 4px;
+  color: var(--accent-bronze);
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 18px;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: clamp(2.1rem, 5vw, 3.4rem);
+  line-height: 1.18;
+  letter-spacing: 0.3px;
+  margin-bottom: 24px;
+}
+
+.section-divider {
+  width: 60px;
+  height: 1.5px;
+  background: var(--accent-bronze);
+  opacity: 0.7;
+  margin-bottom: 28px;
+}
+
+.section-description {
+  font-family: var(--font-body);
+  color: #5f5b53;
+  font-size: clamp(0.92rem, 2vw, 1.05rem);
+  letter-spacing: 0.3px;
+  line-height: 1.85;
+  max-width: 650px;
+  font-weight: 300;
+}

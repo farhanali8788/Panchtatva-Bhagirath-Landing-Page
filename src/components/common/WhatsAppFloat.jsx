@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./WhatsAppFloat.css";
 
-const WHATSAPP_NUMBER = "919XXXXXXXXX";
+const WHATSAPP_NUMBER = "919112006081"; // +91 91120 06081 (same number as Contact section)
 const WHATSAPP_MESSAGE =
   "Hello! I'm interested in learning more about Panchtatva land parcels.";
 

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Header from "./components/layout/Header";
 import Hero from "./components/sections/Hero";
 import AboutEstate from "./components/sections/AboutEstate";
@@ -10,8 +9,6 @@ import Contact from "./components/sections/Contact";
 import WhatsAppFloat from "./components/common/WhatsAppFloat";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <Header />

@@ -3,7 +3,7 @@ import "./LandParcels.css";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
 
 const LandParcels = () => {
-  const parcelImg = `${import.meta.env.BASE_URL}site-images/land-parcel.png`;
+  const parcelImg = `${import.meta.env.BASE_URL}site-images/land-parcel.jpg`;
   const [imgRef, imgVisible] = useScrollAnimation(0.15);
   const [contentRef, contentVisible] = useScrollAnimation(0.15);
 
@@ -14,7 +14,12 @@ const LandParcels = () => {
           ref={imgRef}
           className={`parcel-image anim-fade-left ${imgVisible ? "is-visible" : ""}`}
         >
-          <img src={parcelImg} alt="Private Half Acre Land Parcels" />
+          <img
+            src={parcelImg}
+            alt="Private Half Acre Land Parcels"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
 
         <div
